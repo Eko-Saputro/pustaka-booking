@@ -24,7 +24,7 @@
                    <td>:</td>
                    <td>
                        <input type="text" name="kode" id="kode" value="<?php echo set_value('kode'); ?>" placeholder="Required">
-                   </td>
+                   </td>//menambahkan form_error
                    <td><?php echo form_error('kode'); ?></td>
                </tr>
                <tr>

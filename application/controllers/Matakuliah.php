@@ -7,6 +7,7 @@ class Matakuliah extends CI_Controller{
 
     public function cetak()
     {
+      //menambahkan form_validation
       $this->form_validation->set_rules('kode', 'Kode', 'trim|required|min_length[3]',
       array(
                   'required'      => '%s Wajib diisi.',
@@ -40,4 +41,5 @@ class Matakuliah extends CI_Controller{
                   $this->load->view('view-data-matakuliah', $data);
                 }
     }
+
 }
