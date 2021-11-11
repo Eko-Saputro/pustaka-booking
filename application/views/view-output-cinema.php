@@ -1,69 +1,86 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-  </head>
-  <body>
-    <center>
-      <table align="center">
-       <caption><h2>Pemesanan Tiket Cinema 99</h2></caption>
-        <tr>
-          <td>Nama Pemesan</td>
-          <td>:</td>
-          <td><?= $nama; ?></td>
-        </tr>
-        <tr>
-          <td>Judul Film</td>
-          <td>:</td>
-          <td><?= $judul; ?></td>
-        </tr>
-        <tr>
-          <td>Pukul </td>
-          <td>:</td>
-          <td><?= $pukul; ?> WIB
-          </td>
-        </tr>
-        <tr>
-          <td>Tipe Studio</td>
-          <td>:</td>
-          <td><?= $tipe; ?>
-          </td>
-        </tr>
-        <tr>
-          <td>Jumlah Pesan</td>
-          <td>:</td>
-          <td><?= $jumlah ?>
-          </td>
-        </tr>
-        <?php if($tipe=="Reguler 2D")
-        {$harga=40000;}
-        elseif ($tipe=="3D") {
-          $harga=80000;
-          }
-          else {$harga=100000;
-          }
-          $total=$jumlah*$harga;?>
-        <tr>
-          <td>Harga Tiket</td>
-          <td>:</td>
-          <td><?= $harga ?>
+<html>
+    <head>
+        <title>Cinema 99</title>
+    </head>
+    <body>
+        <h2>Pemesanan Tiket Cinema 99</h2>
 
-          </td>
-        </tr>
-        <tr>
-          <td>Total</td>
-          <td>:</td>
-          <td><?= $total ?>
-          </td>
-        </tr>
-        <tr>
+        <form  method="post" action="<?php echo base_url();?>index.php/cinema/proses_tambah">
+            <table width="30%" border="0" cellpadding="5">
+                <tr>
+                    <td width="30%">
+                        Nama Pemesan
+                    </td>
+                    <td  width="70%">
+                        <?=$nama_pemesan;?>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="30%">
+                        Judul Film
+                    </td>
+                    <td  width="70%">
+                      <?=$judul_film;?>
+                    </td>
+                </tr>
 
-          <th colspan="3"><a href="<?= base_url('cinema')?>">Input Data Lagi</a>
-          </th>
-        </tr>
+                <tr>
+                    <td width="30%">
+                        Pukul
+                    </td>
+                    <td  width="70%">
+                        <?=$pukul;?>
+                    </td>
+                </tr>
 
-      </table>
-    </center>
-  </body>
+                <tr>
+                    <td width="30%">
+                        Tipe Studio
+                    </td>
+                    <td  width="70%">
+                        <?=$tipe_studio;?>
+                    </td>
+                </tr>
+
+
+
+                <tr>
+                    <td width="30%">
+                    Jumlah Pemesan
+                    </td>
+                    <td  width="70%">
+                        <?=$jumlah_pesanan;?>
+                    </td>
+
+                </tr>
+
+                <tr>
+                    <td width="30%">
+                    Harga Tiket
+                    </td>
+                    <td  width="70%">
+                        <?=$harga_tiket;?>
+                    </td>
+
+                </tr>
+
+                <tr>
+                    <td width="30%">
+                    Total
+                    </td>
+                    <td  width="70%">
+                        <?=$total;?>
+                    </td>
+
+                </tr>
+
+
+
+            </table>
+
+        </form>
+
+        <a href="<?php echo base_url();?>index.php/cinema">Input Data Lagi</a>
+
+    </body>
 </html>
